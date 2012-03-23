@@ -156,7 +156,12 @@ class LcSuggest_IndexController extends Omeka_Controller_Action
         $suggests = $this->getDb()->getTable('LcSuggest')->getSuggestEndpoints();
         $options = array('' => 'Select Below');
         foreach ($suggests as $suggestEndpoint => $suggest) {
-            $options[$suggestEndpoint] = $suggest['name'];
+            if ('http://id.loc.gov/suggest' == $suggestEndpoint) {
+                $options[$suggestEndpoint] = $suggest['name'];
+            } else {
+                $optGroup = preg_match('#^http://id\.loc\.gov/vocabulary#', $suggestEndpoint) ? 'Vocabularies': 'Authorities';
+                $options[$optGroup][$suggestEndpoint] = $suggest['name'];
+            }
         }
         return $options;
     }
