@@ -15,7 +15,7 @@ class LcSuggestTable extends Omeka_Db_Table
      * 
      * @see http://id.loc.gov/
      */
-    protected $_suggestEndpoints = array(
+    private $_suggestEndpoints = array(
         'http://id.loc.gov/authorities/subjects/suggest' => array(
             'name' => 'Library of Congress Subject Headings', 
             'url'  => 'http://id.loc.gov/authorities/subjects.html'
@@ -54,12 +54,23 @@ class LcSuggestTable extends Omeka_Db_Table
         ), 
     );
     
+    /**
+     * Find a suggest record by element ID.
+     * 
+     * @param int|string $elementId
+     * @return LcSuggest|null
+     */
     public function findByElementId($elementId)
     {
         $select = $this->getSelect()->where('element_id = ?', $elementId);
         return $this->fetchObject($select);
     }
     
+    /**
+     * Get the suggest endpoints.
+     * 
+     * @return array
+     */
     public function getSuggestEndpoints()
     {
         return $this->_suggestEndpoints;
