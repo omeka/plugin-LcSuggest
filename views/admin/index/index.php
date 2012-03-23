@@ -41,8 +41,10 @@ jQuery(document).ready(function() {
                                              $formSuggestOptions); ?>
                 <p class="explanation">Enter a Library of Congress 
                 authority/vocabulary to enable the autosuggest feature for the 
-                above element. To disable the feature just deselect the 
-                authority/vocabulary.</p>
+                above element. To disable the feature just deselect the option. 
+                For more information about the authorities and vocabularies 
+                available at the Library of Congress see 
+                <a href="http://id.loc.gov" target="_blank">http://id.loc.gov</a></p>
             </div>
         </div>
         <?php echo $this->formSubmit('edit-element-suggest', 
