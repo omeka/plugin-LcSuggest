@@ -47,12 +47,16 @@ class LcSuggestPlugin extends Omeka_Plugin_Abstract
      */
     public function hookDefineAcl($acl)
     {
-        // TODO
+        $acl->loadResourceList(array('LcSuggest_Index' => array(
+            'index', 'editElementSuggest', 'suggestEndpoint', 
+        )));
     }
     
     public function filterAdminNavigationMain($nav)
     {
-        $nav['LC Suggest'] = uri('lc-suggest');
+        if (has_permission('LcSuggest_Index', 'index')) {
+            $nav['LC Suggest'] = uri('lc-suggest');
+        }
         return $nav;
     }
 }
