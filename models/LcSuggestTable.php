@@ -11,11 +11,24 @@ class LcSuggestTable extends Omeka_Db_Table
      * 
      * These authorities and vocabularies have been selected due to their large 
      * size and suitability to the autosuggest feature. Vocabularies not 
-     * included here may be better suited as a full list controlled vocabulary.
+     * explicitly included here may be redundant or better suited as a full list 
+     * controlled vocabulary.
      * 
      * @see http://id.loc.gov/
      */
     private $_suggestEndpoints = array(
+        'http://id.loc.gov/suggest' => array(
+            'name' => 'All Authorities and Vocabularies', 
+            'url'  => 'http://id.loc.gov', 
+        ), 
+        'http://id.loc.gov/authorities/suggest' => array(
+            'name' => 'All Authorities', 
+            'url'  => 'http://id.loc.gov', 
+        ), 
+        'http://id.loc.gov/vocabulary/suggest' => array(
+            'name' => 'All Vocabularies', 
+            'url'  => 'http://id.loc.gov', 
+        ), 
         'http://id.loc.gov/authorities/subjects/suggest' => array(
             'name' => 'Library of Congress Subject Headings', 
             'url'  => 'http://id.loc.gov/authorities/subjects.html'
@@ -51,6 +64,10 @@ class LcSuggestTable extends Omeka_Db_Table
         'http://id.loc.gov/vocabulary/languages/suggest' => array(
             'name' => 'MARC List for Languages', 
             'url'  => 'http://id.loc.gov/vocabulary/languages.html', 
+        ), 
+        'http://id.loc.gov/vocabulary/iso639-5/suggest' => array(
+            'name' => 'ISO 639-5 Language Families and Groups', 
+            'url'  => 'http://id.loc.gov/vocabulary/iso639-5.html', 
         ), 
     );
     
