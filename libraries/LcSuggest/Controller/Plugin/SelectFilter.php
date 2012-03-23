@@ -60,16 +60,16 @@ class LcSuggest_Controller_Plugin_SelectFilter extends Zend_Controller_Plugin_Ab
 ?>
 <script type="text/javascript">
 jQuery(document).bind('omeka:elementformload', function(event) {
-    jQuery('#element-<?php echo $element->id; ?> input[type="text"]').autocomplete({
+    jQuery('#element-<?php echo $element->id; ?> textarea').autocomplete({
         minLength: 3,
         source: <?php echo js_escape(uri('lc-suggest/index/suggest-endpoint-proxy/element-id/' . $element->id)); ?>
     });
 });
 </script>
 <?php
-        echo __v()->formText($inputNameStem . '[text]', 
-                             $value, 
-                             array('size' => '60', 'class' => 'textinput'));
+        echo __v()->formTextarea($inputNameStem . '[text]', 
+                                 $value, 
+                                 array('rows' => '2', 'cols' => '50', 'class' => 'textinput'));
         $element = ob_get_contents();
         ob_end_clean();
         return $element;
