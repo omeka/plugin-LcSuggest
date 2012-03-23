@@ -40,9 +40,9 @@ jQuery(document).ready(function() {
                                              array('id' => 'suggest-endpoint'), 
                                              $formSuggestOptions); ?>
                 <p class="explanation">Enter a Library of Congress 
-                authority/vocabulary to enable the suggest (autocomplete) 
-                feature for the above element. To disable the feature just 
-                deselect the authority/vocabulary.</p>
+                authority/vocabulary to enable the autosuggest feature for the 
+                above element. To disable the feature just deselect the 
+                authority/vocabulary.</p>
             </div>
         </div>
         <?php echo $this->formSubmit('edit-element-suggest', 

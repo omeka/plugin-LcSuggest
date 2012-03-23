@@ -10,7 +10,7 @@ class LcSuggestTable extends Omeka_Db_Table
      * the authority/vocabulary description page.
      * 
      * These authorities and vocabularies have been selected due to their large 
-     * size and suitability to the autocomplete feature. Vocabularies not 
+     * size and suitability to the autosuggest feature. Vocabularies not 
      * included here may be better suited as a full list controlled vocabulary.
      * 
      * @see http://id.loc.gov/

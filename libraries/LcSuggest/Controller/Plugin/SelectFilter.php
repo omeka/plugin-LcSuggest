@@ -53,7 +53,7 @@ class LcSuggest_Controller_Plugin_SelectFilter extends Zend_Controller_Plugin_Ab
     }
     
     /**
-     * Add autocomplete to the element form.
+     * Add autosuggest (jQuery UI autocomplete) to the element form.
      */
     public function filterElement($html, $inputNameStem, $value, $options, $item, $element) {
         ob_start();
