@@ -73,7 +73,7 @@ class LcSuggest_IndexController extends Omeka_Controller_Action
      * Proxy for the Library of Congress suggest endpoints, used by the 
      * autocomplete feature.
      */
-    public function lcSuggestProxyAction()
+    public function suggestEndpointProxyAction()
     {
         // Get the suggest record.
         $elementId = $this->getRequest()->getParam('element-id');

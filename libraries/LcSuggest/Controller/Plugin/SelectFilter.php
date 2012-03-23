@@ -62,7 +62,7 @@ class LcSuggest_Controller_Plugin_SelectFilter extends Zend_Controller_Plugin_Ab
 jQuery(document).bind('omeka:elementformload', function(event) {
     jQuery('#element-<?php echo $element->id; ?> input[type="text"]').autocomplete({
         minLength: 3,
-        source: <?php echo js_escape(uri('lc-suggest/index/lc-suggest-proxy/element-id/' . $element->id)); ?>
+        source: <?php echo js_escape(uri('lc-suggest/index/suggest-endpoint-proxy/element-id/' . $element->id)); ?>
     });
 });
 </script>
