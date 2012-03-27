@@ -39,7 +39,7 @@ class LcSuggestPlugin extends Omeka_Plugin_Abstract
     public function hookInitialize()
     {
         $front = Zend_Controller_Front::getInstance();
-        $front->registerPlugin(new LcSuggest_Controller_Plugin_SelectFilter);
+        $front->registerPlugin(new LcSuggest_Controller_Plugin_Autosuggest);
     }
     
     /**
