@@ -50,7 +50,7 @@ class LcSuggest_Controller_Plugin_Autosuggest extends Zend_Controller_Plugin_Abs
     // Add autosuggest to <?php echo $elementSet->name . ':' . $element->name; ?>. Used by the LC Suggest plugin.
     jQuery(document).bind('omeka:elementformload', function(event) {
         jQuery('#element-<?php echo $element->id; ?> textarea').autocomplete({
-            minLength: 3,
+            minLength: 2,
             source: <?php echo json_encode($view->url('lc-suggest/index/suggest-endpoint-proxy/element-id/' . $element->id)); ?>
         });
     });
