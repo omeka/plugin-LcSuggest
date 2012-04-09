@@ -5,6 +5,7 @@ class LcSuggest_IndexController extends Omeka_Controller_Action
     {
         $this->view->assign('formElementOptions', $this->_getFormElementOptions());
         $this->view->assign('formSuggestOptions', $this->_getFormSuggestOptions());
+        $this->view->assign('assignments', $this->_getAssignments());
     }
     
     public function editElementSuggestAction()
@@ -164,5 +165,29 @@ class LcSuggest_IndexController extends Omeka_Controller_Action
             }
         }
         return $options;
+    }
+    
+    /**
+     * Get all the authority/vocabulary assignments.
+     * 
+     * @return array
+     */
+    private function _getAssignments()
+    {
+        $lcSuggestTable = $this->getTable('LcSuggest');
+        $elementTable = $this->getTable('Element');
+        $elementSetTable = $this->getTable('ElementSet');
+        
+        $suggestEndpoints = $lcSuggestTable->getSuggestEndpoints();
+        $assignments = array();
+        foreach ($lcSuggestTable->findAll() as $lcSuggest) {
+            $element = $elementTable->find($lcSuggest->element_id);
+            $elementSet = $elementSetTable->find($element->element_set_id);
+            $authorityVocabulary = $suggestEndpoints[$lcSuggest->suggest_endpoint]['name'];
+            $assignments[] = array('element_set_name' => $elementSet->name, 
+                                   'element_name' => $element->name, 
+                                   'authority_vocabulary' => $authorityVocabulary);
+        }
+        return $assignments;
     }
 }

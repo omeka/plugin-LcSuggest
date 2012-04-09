@@ -51,5 +51,28 @@ jQuery(document).ready(function() {
                                      'Edit Suggest', 
                                      array('class' => 'submit submit-large')); ?>
     </form>
+    <h2>Current Assignments</h2>
+    <?php if ($assignments): ?>
+    <table>
+        <thead>
+        <tr>
+            <th>Element Set</th>
+            <th>Element</th>
+            <th>Authority/Vocabulary</th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php foreach ($assignments as $assignment): ?>
+        <tr>
+            <td><?php echo $assignment['element_set_name']; ?></td>
+            <td><?php echo $assignment['element_name']; ?></td>
+            <td><?php echo $assignment['authority_vocabulary']; ?></td>
+        </tr>
+        <?php endforeach; ?>
+        </tbody>
+    </table>
+    <?php else: ?>
+    <p>There are no suggest assignments.</p>
+    <?php endif; ?>
 </div>
 <?php foot(); ?>
