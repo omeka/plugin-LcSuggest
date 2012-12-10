@@ -1,7 +1,17 @@
 <?php
-require_once 'Omeka/Plugin/Abstract.php';
+/**
+ * Library of Congress Suggest
+ * 
+ * @copyright Copyright 2007-2012 Roy Rosenzweig Center for History and New Media
+ * @license http://www.gnu.org/licenses/gpl-3.0.txt GNU GPLv3
+ */
 
-class LcSuggestPlugin extends Omeka_Plugin_Abstract
+/**
+ * The Library of Congress Suggest plugin.
+ * 
+ * @package Omeka\Plugins\LcSuggest
+ */
+class LcSuggestPlugin extends Omeka_Plugin_AbstractPlugin
 {
     protected $_hooks = array(
         'install', 
@@ -14,10 +24,13 @@ class LcSuggestPlugin extends Omeka_Plugin_Abstract
         'admin_navigation_main', 
     );
     
+    /**
+     * Install the plugin.
+     */
     public function hookInstall()
     {
         $sql = "
-        CREATE TABLE `{$this->_db->prefix}lc_suggests` (
+        CREATE TABLE `{$this->_db->LcSuggest}` (
             `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
             `element_id` int(10) unsigned NOT NULL,
             `suggest_endpoint` tinytext COLLATE utf8_unicode_ci NOT NULL,
@@ -27,36 +40,44 @@ class LcSuggestPlugin extends Omeka_Plugin_Abstract
         $this->_db->query($sql);
     }
     
+    /**
+     * Uninstall the plugin.
+     */
     public function hookUninstall()
     {
-        $sql = "DROP TABLE IF EXISTS `{$this->_db->prefix}lc_suggests`";
+        $sql = "DROP TABLE IF EXISTS `{$this->_db->LcSuggest}`";
         $this->_db->query($sql);
     }
     
     /**
-     * Register the SelectFilter controller plugin.
+     * Initialize the plugin.
      */
     public function hookInitialize()
     {
+        // Register the SelectFilter controller plugin.
         $front = Zend_Controller_Front::getInstance();
         $front->registerPlugin(new LcSuggest_Controller_Plugin_Autosuggest);
     }
     
     /**
-     * Restrict access to super and admin.
+     * Define the plugin's access control list.
      */
-    public function hookDefineAcl($acl)
+    public function hookDefineAcl($args)
     {
-        $acl->loadResourceList(array('LcSuggest_Index' => array(
-            'index', 'editElementSuggest', 'suggestEndpoint', 
-        )));
+        $args['acl']->addResource('LcSuggest_Index');
     }
     
+    /**
+     * Add the LC Suggest page to the admin navigation.
+     */
     public function filterAdminNavigationMain($nav)
     {
-        if (has_permission('LcSuggest_Index', 'index')) {
-            $nav['LC Suggest'] = uri('lc-suggest');
-        }
+        $nav[] = array(
+            'label' => __('LC Suggest'), 
+            'uri' => url('lc-suggest'), 
+            'resource' => 'LcSuggest_Index', 
+            'privilege' => 'index', 
+        );
         return $nav;
     }
 }

@@ -1,11 +1,23 @@
 <?php
-class LcSuggest_IndexController extends Omeka_Controller_Action
+/**
+ * Library of Congress Suggest
+ * 
+ * @copyright Copyright 2007-2012 Roy Rosenzweig Center for History and New Media
+ * @license http://www.gnu.org/licenses/gpl-3.0.txt GNU GPLv3
+ */
+
+/**
+ * The Library of Congress Suggest controller.
+ * 
+ * @package Omeka\Plugins\LcSuggest
+ */
+class LcSuggest_IndexController extends Omeka_Controller_AbstractActionController
 {
     public function indexAction()
     {
-        $this->view->assign('formElementOptions', $this->_getFormElementOptions());
-        $this->view->assign('formSuggestOptions', $this->_getFormSuggestOptions());
-        $this->view->assign('assignments', $this->_getAssignments());
+        $this->view->form_element_options = $this->_getFormElementOptions();
+        $this->view->form_suggest_options = $this->_getFormSuggestOptions();
+        $this->view->assignments = $this->_getAssignments();
     }
     
     public function editElementSuggestAction()
@@ -15,10 +27,10 @@ class LcSuggest_IndexController extends Omeka_Controller_Action
         
         // Don't process empty select options.
         if ('' == $elementId) {
-            $this->redirect->goto('index');
+            $this->_helper->redirector('index');
         }
         
-        $lcSuggest = $this->getTable('LcSuggest')->findByElementId($elementId);
+        $lcSuggest = $this->_helper->db->getTable('LcSuggest')->findByElementId($elementId);
         
         // Handle an existing suggest record.
         if ($lcSuggest) {
@@ -26,36 +38,36 @@ class LcSuggest_IndexController extends Omeka_Controller_Action
             // Delete suggest record if there is no endpoint.
             if ('' == $suggestEndpoint) {
                 $lcSuggest->delete();
-                $this->flashSuccess('Successfully disabled the element\'s suggest feature.');
-                $this->redirect->goto('index');
+                $this->_helper->flashMessenger('Successfully disabled the element\'s suggest feature.', 'success');
+                $this->_helper->redirector('index');
             }
             
             // Don't process an invalid suggest endpoint.
             if (!$this->_suggestEndpointExists($suggestEndpoint)) {
-                $this->flashError('Invalid suggest endpoint. No changes have been made.');
-                $this->redirect->goto('index');
+                $this->_helper->flashMessenger('Invalid suggest endpoint. No changes have been made.', 'error');
+                $this->_helper->redirector('index');
             }
             
             $lcSuggest->suggest_endpoint = $suggestEndpoint;
-            $this->flashSuccess('Successfully edited the element\'s suggest feature.');
+            $this->_helper->flashMessenger('Successfully edited the element\'s suggest feature.', 'success');
         
         // Handle a new suggest record.
         } else {
             
             // Don't process an invalid suggest endpoint.
             if (!$this->_suggestEndpointExists($suggestEndpoint)) {
-                $this->flashError('Invalid suggest endpoint. No changes have been made.');
-                $this->redirect->goto('index');
+                $this->_helper->flashMessenger('Invalid suggest endpoint. No changes have been made.', 'error');
+                $this->_helper->redirector('index');
             }
             
             $lcSuggest = new LcSuggest;
             $lcSuggest->element_id = $elementId;
             $lcSuggest->suggest_endpoint = $suggestEndpoint;
-            $this->flashSuccess('Successfully enabled the element\'s suggest feature.');
+            $this->_helper->flashMessenger('Successfully enabled the element\'s suggest feature.', 'success');
         }
         
         $lcSuggest->save();
-        $this->redirect->goto('index');
+        $this->_helper->redirector('index');
     }
     
     /**
@@ -66,7 +78,7 @@ class LcSuggest_IndexController extends Omeka_Controller_Action
     {
         $this->_helper->viewRenderer->setNoRender();
         $elementId = $this->getRequest()->getParam('element_id');
-        $lcSuggest = $this->getTable('LcSuggest')->findByElementId($elementId);
+        $lcSuggest = $this->_helper->db->getTable('LcSuggest')->findByElementId($elementId);
         echo $lcSuggest->suggest_endpoint;
     }
     
@@ -78,7 +90,7 @@ class LcSuggest_IndexController extends Omeka_Controller_Action
     {
         // Get the suggest record.
         $elementId = $this->getRequest()->getParam('element-id');
-        $lcSuggest = $this->getDb()->getTable('LcSuggest')->findByElementId($elementId);
+        $lcSuggest = $this->_helper->db->getTable('LcSuggest')->findByElementId($elementId);
         
         // Query the specified Library of Congress suggest endpoint, get the 
         // response, and output suggestions in JSON.
@@ -88,15 +100,16 @@ class LcSuggest_IndexController extends Omeka_Controller_Action
         $json = json_decode($client->request()->getBody());
         $this->_helper->json($json[1]);
     }
+    
     /**
-     * Check of the specified suggest endpoint exists.
+     * Check if the specified suggest endpoint exists.
      * 
      * @param string $suggestEndpoint
      * @return bool
      */
     private function _suggestEndpointExists($suggestEndpoint)
     {
-        $suggestEndpoints = $this->getDb()->getTable('LcSuggest')->getSuggestEndpoints();
+        $suggestEndpoints = $this->_helper->db->getTable('LcSuggest')->getSuggestEndpoints();
         if (!array_key_exists($suggestEndpoint, $suggestEndpoints)) {
             return false;
         }
@@ -110,29 +123,18 @@ class LcSuggest_IndexController extends Omeka_Controller_Action
      */
     private function _getFormElementOptions()
     {
-        $db = $this->getDb();
-        $select = $db->select()
-                     ->from(array('rt' => $db->RecordType), 
-                            array())
-                     ->join(array('es' => $db->ElementSet), 
-                            'rt.id = es.record_type_id', 
-                            array('element_set_name' => 'name'))
-                     ->join(array('e' => $db->Element), 
-                            'es.id = e.element_set_id', 
-                            array('element_id' =>'e.id', 
-                                  'element_name' => 'e.name'))
-                     ->joinLeft(array('ite' => $db->ItemTypesElements), 
-                                'e.id = ite.element_id',
-                                array())
-                     ->joinLeft(array('it' => $db->ItemType), 
-                                'ite.item_type_id = it.id', 
-                                array('item_type_name' => 'it.name'))
-                     ->joinLeft(array('ls' => $db->LcSuggest), 
-                                'e.id = ls.element_id', 
-                                array('lc_suggest_id' => 'ls.id'))
-                     ->where('rt.name = "All" OR rt.name = "Item"')
-                     ->order(array('es.name', 'it.name', 'e.name'));
-        $elements = $db->fetchAll($select);
+        $db = $this->_helper->db->getDb();
+        $sql = "
+        SELECT es.name AS element_set_name, e.id AS element_id, e.name AS element_name, 
+        it.name AS item_type_name, ls.id AS lc_suggest_id 
+        FROM {$db->ElementSet} es 
+        JOIN {$db->Element} e ON es.id = e.element_set_id 
+        LEFT JOIN {$db->ItemTypesElements} ite ON e.id = ite.element_id 
+        LEFT JOIN {$db->ItemType} it ON ite.item_type_id = it.id 
+        LEFT JOIN {$db->LcSuggest} ls ON e.id = ls.element_id 
+        WHERE es.record_type IS NULL OR es.record_type = 'Item' 
+        ORDER BY es.name, it.name, e.name";
+        $elements = $db->fetchAll($sql);
         $options = array('' => 'Select Below');
         foreach ($elements as $element) {
             $optGroup = $element['item_type_name'] 
@@ -154,7 +156,7 @@ class LcSuggest_IndexController extends Omeka_Controller_Action
      */
     private function _getFormSuggestOptions()
     {
-        $suggests = $this->getDb()->getTable('LcSuggest')->getSuggestEndpoints();
+        $suggests = $this->_helper->db->getTable('LcSuggest')->getSuggestEndpoints();
         $options = array('' => 'Select Below');
         foreach ($suggests as $suggestEndpoint => $suggest) {
             if ('http://id.loc.gov/suggest' == $suggestEndpoint) {
@@ -174,9 +176,9 @@ class LcSuggest_IndexController extends Omeka_Controller_Action
      */
     private function _getAssignments()
     {
-        $lcSuggestTable = $this->getTable('LcSuggest');
-        $elementTable = $this->getTable('Element');
-        $elementSetTable = $this->getTable('ElementSet');
+        $lcSuggestTable = $this->_helper->db->getTable('LcSuggest');
+        $elementTable = $this->_helper->db->getTable('Element');
+        $elementSetTable = $this->_helper->db->getTable('ElementSet');
         
         $suggestEndpoints = $lcSuggestTable->getSuggestEndpoints();
         $assignments = array();
