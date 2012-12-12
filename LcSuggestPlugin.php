@@ -57,6 +57,9 @@ class LcSuggestPlugin extends Omeka_Plugin_AbstractPlugin
         // Register the SelectFilter controller plugin.
         $front = Zend_Controller_Front::getInstance();
         $front->registerPlugin(new LcSuggest_Controller_Plugin_Autosuggest);
+        
+        // Add translation.
+        add_translation_source(dirname(__FILE__) . '/languages');
     }
     
     /**

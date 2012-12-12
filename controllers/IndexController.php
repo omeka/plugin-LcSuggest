@@ -38,32 +38,32 @@ class LcSuggest_IndexController extends Omeka_Controller_AbstractActionControlle
             // Delete suggest record if there is no endpoint.
             if ('' == $suggestEndpoint) {
                 $lcSuggest->delete();
-                $this->_helper->flashMessenger('Successfully disabled the element\'s suggest feature.', 'success');
+                $this->_helper->flashMessenger(__('Successfully disabled the element\'s suggest feature.'), 'success');
                 $this->_helper->redirector('index');
             }
             
             // Don't process an invalid suggest endpoint.
             if (!$this->_suggestEndpointExists($suggestEndpoint)) {
-                $this->_helper->flashMessenger('Invalid suggest endpoint. No changes have been made.', 'error');
+                $this->_helper->flashMessenger(__('Invalid suggest endpoint. No changes have been made.'), 'error');
                 $this->_helper->redirector('index');
             }
             
             $lcSuggest->suggest_endpoint = $suggestEndpoint;
-            $this->_helper->flashMessenger('Successfully edited the element\'s suggest feature.', 'success');
+            $this->_helper->flashMessenger(__('Successfully edited the element\'s suggest feature.'), 'success');
         
         // Handle a new suggest record.
         } else {
             
             // Don't process an invalid suggest endpoint.
             if (!$this->_suggestEndpointExists($suggestEndpoint)) {
-                $this->_helper->flashMessenger('Invalid suggest endpoint. No changes have been made.', 'error');
+                $this->_helper->flashMessenger(__('Invalid suggest endpoint. No changes have been made.'), 'error');
                 $this->_helper->redirector('index');
             }
             
             $lcSuggest = new LcSuggest;
             $lcSuggest->element_id = $elementId;
             $lcSuggest->suggest_endpoint = $suggestEndpoint;
-            $this->_helper->flashMessenger('Successfully enabled the element\'s suggest feature.', 'success');
+            $this->_helper->flashMessenger(__('Successfully enabled the element\'s suggest feature.'), 'success');
         }
         
         $lcSuggest->save();
@@ -135,12 +135,12 @@ class LcSuggest_IndexController extends Omeka_Controller_AbstractActionControlle
         WHERE es.record_type IS NULL OR es.record_type = 'Item' 
         ORDER BY es.name, it.name, e.name";
         $elements = $db->fetchAll($sql);
-        $options = array('' => 'Select Below');
+        $options = array('' => __('Select Below'));
         foreach ($elements as $element) {
             $optGroup = $element['item_type_name'] 
-                      ? 'Item Type: ' . $element['item_type_name'] 
-                      : $element['element_set_name'];
-            $value = $element['element_name'];
+                      ? __('Item Type') . ': ' . __($element['item_type_name']) 
+                      : __($element['element_set_name']);
+            $value = __($element['element_name']);
             if ($element['lc_suggest_id']) {
                 $value .= ' *';
             }
@@ -157,13 +157,13 @@ class LcSuggest_IndexController extends Omeka_Controller_AbstractActionControlle
     private function _getFormSuggestOptions()
     {
         $suggests = $this->_helper->db->getTable('LcSuggest')->getSuggestEndpoints();
-        $options = array('' => 'Select Below');
+        $options = array('' => __('Select Below'));
         foreach ($suggests as $suggestEndpoint => $suggest) {
             if ('http://id.loc.gov/suggest' == $suggestEndpoint) {
-                $options[$suggestEndpoint] = $suggest['name'];
+                $options[$suggestEndpoint] = __($suggest['name']);
             } else {
-                $optGroup = preg_match('#^http://id\.loc\.gov/vocabulary#', $suggestEndpoint) ? 'Vocabularies': 'Authorities';
-                $options[$optGroup][$suggestEndpoint] = $suggest['name'];
+                $optGroup = preg_match('#^http://id\.loc\.gov/vocabulary#', $suggestEndpoint) ? __('Vocabularies'): __('Authorities');
+                $options[$optGroup][$suggestEndpoint] = __($suggest['name']);
             }
         }
         return $options;
@@ -186,9 +186,9 @@ class LcSuggest_IndexController extends Omeka_Controller_AbstractActionControlle
             $element = $elementTable->find($lcSuggest->element_id);
             $elementSet = $elementSetTable->find($element->element_set_id);
             $authorityVocabulary = $suggestEndpoints[$lcSuggest->suggest_endpoint]['name'];
-            $assignments[] = array('element_set_name' => $elementSet->name, 
-                                   'element_name' => $element->name, 
-                                   'authority_vocabulary' => $authorityVocabulary);
+            $assignments[] = array('element_set_name' => __($elementSet->name), 
+                                   'element_name' => __($element->name), 
+                                   'authority_vocabulary' => __($authorityVocabulary));
         }
         return $assignments;
     }
