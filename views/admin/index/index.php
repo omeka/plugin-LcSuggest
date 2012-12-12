@@ -22,10 +22,10 @@ jQuery(document).ready(function() {
             <label for="element-id"><?php echo __('Element'); ?></label>
         </div>
         <div class="inputs five columns omega">
-            <?php echo $this->formSelect('element_id', null, array('id' => 'element-id'), $this->form_element_options) ?>
             <p class="explanation"><?php echo __('Select an element to assign it ' 
             . 'a Library of Congress authority/vocabulary. Elements already assigned ' 
             . 'an authority/vocabulary are marked with an asterisk (*).'); ?></p>
+            <?php echo $this->formSelect('element_id', null, array('id' => 'element-id'), $this->form_element_options) ?>
         </div>
     </div>
     <div class="field">
@@ -33,12 +33,12 @@ jQuery(document).ready(function() {
             <label for="suggest-endpoint"><?php echo __('Authority/Vocabulary'); ?></label>
         </div>
         <div class="inputs five columns omega">
-            <?php echo $this->formSelect('suggest_endpoint', null, array('id' => 'suggest-endpoint'), $this->form_suggest_options); ?>
             <p class="explanation"><?php echo __('Enter a Library of Congress authority/vocabulary ' 
             . 'to enable the autosuggest feature for the above element. To disable ' 
             . 'the feature just deselect the option. For more information about the ' 
             . 'authorities and vocabularies available at the Library of Congress see ' 
             . '%shttp://id.loc.gov%s', '<a href="http://id.loc.gov" target="_blank">', '</a>'); ?></p>
+            <?php echo $this->formSelect('suggest_endpoint', null, array('id' => 'suggest-endpoint'), $this->form_suggest_options); ?>
         </div>
     </div>
 </section>
