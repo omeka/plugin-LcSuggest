@@ -16,7 +16,7 @@ class LcSuggest_Controller_Plugin_Autosuggest extends Zend_Controller_Plugin_Abs
     /**
      * Add autosuggest only during defined routes.
      */
-    public function preDispatch($request)
+    public function preDispatch(Zend_Controller_Request_Abstract $request)
     {
         $db = get_db();
         
