@@ -3,15 +3,16 @@
 # This file is distributed under the same license as the Omeka package.
 # 
 # Translators:
+# Daniel Berthereau <daniel.transifex@berthereau.net>, 2016
 # Julien Sicot <julien.sicot@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Omeka\n"
-"Report-Msgid-Bugs-To: https://github.com/omeka/Omeka/issues\n"
+"Report-Msgid-Bugs-To: http://github.com/omeka/plugin-LcSuggest/issues\n"
 "POT-Creation-Date: 2012-12-11 21:49-0500\n"
-"PO-Revision-Date: 2013-05-14 17:56+0000\n"
-"Last-Translator: Julien Sicot <julien.sicot@gmail.com>\n"
-"Language-Team: French (http://www.transifex.com/projects/p/omeka/language/fr/)\n"
+"PO-Revision-Date: 2016-10-10 15:49+0000\n"
+"Last-Translator: Daniel Berthereau <daniel.transifex@berthereau.net>\n"
+"Language-Team: French (http://www.transifex.com/omeka/omeka/language/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,15 +21,15 @@ msgstr ""
 
 #: Suggest endpoint name
 msgid "All Authorities and Vocabularies"
-msgstr ""
+msgstr "Tous les vocabulaires et autorités"
 
 #: Suggest endpoint name
 msgid "All Authorities"
-msgstr ""
+msgstr "Toutes les autorités"
 
 #: Suggest endpoint name
 msgid "All Vocabularies"
-msgstr ""
+msgstr "Tous les vocabulaires"
 
 #: Suggest endpoint name
 msgid "Library of Congress Subject Headings"
@@ -36,78 +37,78 @@ msgstr "Vedettes-matières de la Bibliothèque du Congrès"
 
 #: Suggest endpoint name
 msgid "Library of Congress Names"
-msgstr ""
+msgstr "Noms de la Bibliothèque du Congrès"
 
 #: Suggest endpoint name
 msgid "Library of Congress Children's Subject Headings"
-msgstr ""
+msgstr "Vedettes-matières enfants de la Bibliothèque du Congrès"
 
 #: Suggest endpoint name
 msgid "Library of Congress Genre Form Headings"
-msgstr ""
+msgstr "Rubriques des formes de genre de la Bibliothèque du Congrès"
 
 #: Suggest endpoint name
 msgid "Thesaurus for Graphic Materials"
-msgstr ""
+msgstr "Thésaurus pour les ressources graphiques"
 
 #: Suggest endpoint name
 msgid "MARC Code List for Relators"
-msgstr ""
+msgstr "Liste des codes MARC pour les renvois"
 
 #: Suggest endpoint name
 msgid "MARC List for Countries"
-msgstr ""
+msgstr "Liste des codes MARC des pays"
 
 #: Suggest endpoint name
 msgid "MARC List for Geographic Areas"
-msgstr ""
+msgstr "Liste des codes MARC pour les aires géographiques"
 
 #: Suggest endpoint name
 msgid "MARC List for Languages"
-msgstr ""
+msgstr "Liste des codes MARC pour les langues"
 
 #: Suggest endpoint name
 msgid "ISO 639-5 Language Families and Groups"
-msgstr ""
+msgstr "Familles et groupes de langues ISO 639-5"
 
 #: LcSuggestPlugin.php:79
 msgid "LC Suggest"
-msgstr ""
+msgstr "LC Suggest"
 
 #: controllers/IndexController.php:41
 msgid "Successfully disabled the element's suggest feature."
-msgstr ""
+msgstr "Désactivation réussie de la fonctionnalité de suggestion de l'élément."
 
 #: controllers/IndexController.php:47 controllers/IndexController.php:59
 msgid "Invalid suggest endpoint. No changes have been made."
-msgstr ""
+msgstr "Le lien de destination pour la suggestion est invalide. Aucun changement n’a été enregistré."
 
 #: controllers/IndexController.php:52
 msgid "Successfully edited the element's suggest feature."
-msgstr ""
+msgstr "Modification réussie de la fonction de suggestion de l’élément."
 
 #: controllers/IndexController.php:66
 msgid "Successfully enabled the element's suggest feature."
-msgstr ""
+msgstr "Activation réussie de la fonction de suggestion de l’élément."
 
 #: controllers/IndexController.php:165
 msgid "Vocabularies"
-msgstr ""
+msgstr "Vocabulaires"
 
 #: controllers/IndexController.php:165
 msgid "Authorities"
-msgstr ""
+msgstr "Autorités"
 
 #: views/admin/index/index.php:22 views/admin/index/index.php:58
 msgid "Element"
-msgstr ""
+msgstr "Élement"
 
 #: views/admin/index/index.php:25
 msgid ""
 "Select an element to assign it a Library of Congress authority/vocabulary. "
 "Elements already assigned an authority/vocabulary are marked with an "
 "asterisk (*)."
-msgstr ""
+msgstr "Sélectionner un élément pour lui assigner une autorité ou un vocabulaire de la Bibliothèque du Congrès. Les éléments disposant déjà d’une autorité ou d’un vocabulaire sont signalés par une astérisque (*)."
 
 #: views/admin/index/index.php:33 views/admin/index/index.php:59
 msgid "Authority/Vocabulary"
@@ -120,20 +121,20 @@ msgid ""
 "feature for the above element. To disable the feature just deselect the "
 "option. For more information about the authorities and vocabularies "
 "available at the Library of Congress see %shttp://id.loc.gov%s"
-msgstr ""
+msgstr "Indiquer une autorité ou un vocabulaire de la Bibliothèque du Congrès pour activer la fonction d’autosuggestion pour l’élément ci-dessus. Pour désactiver la fonctionnalité, il suffit de désélectionner l’option. Pour plus d’information sur les autorités et les vocabulaires disponibles à la Bibliothèque du Congrès, voir %shttp://id.loc.gov%s."
 
 #: views/admin/index/index.php:47
 msgid "Edit Suggest"
-msgstr ""
+msgstr "Éditer la suggestion"
 
 #: views/admin/index/index.php:52
 msgid "Current Assignments"
-msgstr ""
+msgstr "Affectations en cours"
 
 #: views/admin/index/index.php:57
 msgid "Element Set"
-msgstr "Ensembles d'éléments"
+msgstr "Jeu de métadonnées"
 
 #: views/admin/index/index.php:73
 msgid "There are no suggest assignments."
-msgstr ""
+msgstr "Aucune affectation proposée."

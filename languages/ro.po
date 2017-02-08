@@ -3,100 +3,100 @@
 # This file is distributed under the same license as the Omeka package.
 # 
 # Translators:
-# Evy De Wulf <evy.dewulf@libis.kuleuven.be>, 2013
+# Doru  DEACONU <dumitrudeaconu@yahoo.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Omeka\n"
 "Report-Msgid-Bugs-To: http://github.com/omeka/plugin-LcSuggest/issues\n"
 "POT-Creation-Date: 2012-12-11 21:49-0500\n"
-"PO-Revision-Date: 2013-05-01 12:03+0000\n"
-"Last-Translator: Sam Alloing <sam.alloing@gmail.com>\n"
-"Language-Team: Dutch (Belgium) (http://www.transifex.com/omeka/omeka/language/nl_BE/)\n"
+"PO-Revision-Date: 2014-11-25 18:29+0000\n"
+"Last-Translator: Doru  DEACONU <dumitrudeaconu@yahoo.com>\n"
+"Language-Team: Romanian (http://www.transifex.com/omeka/omeka/language/ro/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: nl_BE\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: ro\n"
+"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
 
 #: Suggest endpoint name
 msgid "All Authorities and Vocabularies"
-msgstr "Alle autoriteiten en woordenlijsten"
+msgstr "Toate autorităţile şi vocabularele"
 
 #: Suggest endpoint name
 msgid "All Authorities"
-msgstr "Alle autoriteiten"
+msgstr "Toate autorităţile"
 
 #: Suggest endpoint name
 msgid "All Vocabularies"
-msgstr "Alle woordenlijsten"
+msgstr "Toate vocabularele"
 
 #: Suggest endpoint name
 msgid "Library of Congress Subject Headings"
-msgstr "Library of Congress onderwerpen"
+msgstr ""
 
 #: Suggest endpoint name
 msgid "Library of Congress Names"
-msgstr "Library of Congress namen"
+msgstr ""
 
 #: Suggest endpoint name
 msgid "Library of Congress Children's Subject Headings"
-msgstr "Lijst met MARC-codes voor relators"
+msgstr ""
 
 #: Suggest endpoint name
 msgid "Library of Congress Genre Form Headings"
-msgstr "Library of Congress genres"
+msgstr ""
 
 #: Suggest endpoint name
 msgid "Thesaurus for Graphic Materials"
-msgstr "Thesaurus voor grafische materialen"
+msgstr ""
 
 #: Suggest endpoint name
 msgid "MARC Code List for Relators"
-msgstr "Lijst met MARC-codes voor relators"
+msgstr ""
 
 #: Suggest endpoint name
 msgid "MARC List for Countries"
-msgstr "MARC lijst voor landen"
+msgstr ""
 
 #: Suggest endpoint name
 msgid "MARC List for Geographic Areas"
-msgstr "MARC lijst voor geografische gebieden"
+msgstr ""
 
 #: Suggest endpoint name
 msgid "MARC List for Languages"
-msgstr "MARC lijst voor talen"
+msgstr ""
 
 #: Suggest endpoint name
 msgid "ISO 639-5 Language Families and Groups"
-msgstr "ISO 639-5 Taalfamilies en groepen"
+msgstr ""
 
 #: LcSuggestPlugin.php:79
 msgid "LC Suggest"
-msgstr "LC voorstel"
+msgstr ""
 
 #: controllers/IndexController.php:41
 msgid "Successfully disabled the element's suggest feature."
-msgstr "De functie om voor te stellen is succesvol uitgeschakeld bij het element."
+msgstr ""
 
 #: controllers/IndexController.php:47 controllers/IndexController.php:59
 msgid "Invalid suggest endpoint. No changes have been made."
-msgstr "Ongeldig voorgesteld eindpunt. Er werden geen aanpassingen gedaan. "
+msgstr ""
 
 #: controllers/IndexController.php:52
 msgid "Successfully edited the element's suggest feature."
-msgstr "De functie om voor te stellen is succesvol aangepast bij het element."
+msgstr ""
 
 #: controllers/IndexController.php:66
 msgid "Successfully enabled the element's suggest feature."
-msgstr "De functie om voor te stellen is succesvol ingeschakeld bij het element."
+msgstr ""
 
 #: controllers/IndexController.php:165
 msgid "Vocabularies"
-msgstr "Woordenlijsten"
+msgstr "Vocabulare"
 
 #: controllers/IndexController.php:165
 msgid "Authorities"
-msgstr "Autoriteiten"
+msgstr ""
 
 #: views/admin/index/index.php:22 views/admin/index/index.php:58
 msgid "Element"
@@ -107,11 +107,11 @@ msgid ""
 "Select an element to assign it a Library of Congress authority/vocabulary. "
 "Elements already assigned an authority/vocabulary are marked with an "
 "asterisk (*)."
-msgstr "Selecteer een element om het een Library of Congress autoriteit / woordenlijst toe te wijzen. Elementen met een reeds toegewezen autoriteit / woordenlijst zijn gemarkeerd met een sterretje (*)."
+msgstr ""
 
 #: views/admin/index/index.php:33 views/admin/index/index.php:59
 msgid "Authority/Vocabulary"
-msgstr "Autoriteit/woordenlijst"
+msgstr "Autoritate/Vocabular"
 
 #: views/admin/index/index.php:36
 #, php-format
@@ -120,20 +120,20 @@ msgid ""
 "feature for the above element. To disable the feature just deselect the "
 "option. For more information about the authorities and vocabularies "
 "available at the Library of Congress see %shttp://id.loc.gov%s"
-msgstr "Typ een Library of Congress autoriteit/woordenlijst om de autosuggest functie voor het bovenstaande element in te schakelen. Om de functie uit te schakelen, deselecteer je de optie. Voor meer informatie over autoriteiten en woordenlijsten verkrijgbaar bij Library of Congress, zie %shttp://id.loc.gov%s"
+msgstr ""
 
 #: views/admin/index/index.php:47
 msgid "Edit Suggest"
-msgstr "Bewerk Voorstellen"
+msgstr ""
 
 #: views/admin/index/index.php:52
 msgid "Current Assignments"
-msgstr "Huidige toewijzingen"
+msgstr ""
 
 #: views/admin/index/index.php:57
 msgid "Element Set"
-msgstr "Element set"
+msgstr "Set Element "
 
 #: views/admin/index/index.php:73
 msgid "There are no suggest assignments."
-msgstr "Er zijn geen voorgestelde toewijzingen."
+msgstr ""
