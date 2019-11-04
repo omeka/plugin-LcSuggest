@@ -67,7 +67,9 @@ class LcSuggestPlugin extends Omeka_Plugin_AbstractPlugin
      */
     public function hookDefineAcl($args)
     {
-        $args['acl']->addResource('LcSuggest_Index');
+        $acl = $args['acl'];
+        $acl->addResource('LcSuggest_Index');
+        $acl->allow(null, 'LcSuggest_Index', 'suggest-endpoint-proxy');
     }
     
     /**
