@@ -1,0 +1,139 @@
+# Translation for the Library of Congress Suggest plugin for Omeka.
+# Copyright (C) 2012 Roy Rosenzweig Center for History and New Media
+# This file is distributed under the same license as the Omeka package.
+# 
+# Translators:
+# tanya chorna <tanya.chorna@gmail.com>, 2019
+msgid ""
+msgstr ""
+"Project-Id-Version: Omeka\n"
+"Report-Msgid-Bugs-To: http://github.com/omeka/plugin-LcSuggest/issues\n"
+"POT-Creation-Date: 2012-12-11 21:49-0500\n"
+"PO-Revision-Date: 2019-10-09 14:24+0000\n"
+"Last-Translator: tanya chorna <tanya.chorna@gmail.com>\n"
+"Language-Team: Ukrainian (http://www.transifex.com/omeka/omeka/language/uk/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: uk\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+
+#: Suggest endpoint name
+msgid "All Authorities and Vocabularies"
+msgstr "Всі авторитетні файли та словники"
+
+#: Suggest endpoint name
+msgid "All Authorities"
+msgstr "Всі авторитетні файли"
+
+#: Suggest endpoint name
+msgid "All Vocabularies"
+msgstr "Всі словники"
+
+#: Suggest endpoint name
+msgid "Library of Congress Subject Headings"
+msgstr "Предметні заголовки Бібліотеки Конгресу США"
+
+#: Suggest endpoint name
+msgid "Library of Congress Names"
+msgstr "Заголовки імені Бібліотеки Конгресу США"
+
+#: Suggest endpoint name
+msgid "Library of Congress Children's Subject Headings"
+msgstr "Предметні заголовки дитячі Бібліотеки Конгресу США"
+
+#: Suggest endpoint name
+msgid "Library of Congress Genre Form Headings"
+msgstr "Заголовки форми жанру Бібліотеки Конгресу США"
+
+#: Suggest endpoint name
+msgid "Thesaurus for Graphic Materials"
+msgstr "Тезаурус для графічних матеріалів"
+
+#: Suggest endpoint name
+msgid "MARC Code List for Relators"
+msgstr "Список MARC кодів для професій"
+
+#: Suggest endpoint name
+msgid "MARC List for Countries"
+msgstr "Список MARC кодів для країн"
+
+#: Suggest endpoint name
+msgid "MARC List for Geographic Areas"
+msgstr "Список MARC кодів для географічного регіону"
+
+#: Suggest endpoint name
+msgid "MARC List for Languages"
+msgstr "Список MARC кодів для мов"
+
+#: Suggest endpoint name
+msgid "ISO 639-5 Language Families and Groups"
+msgstr "Стандарт ISO 639-5 для мов та мовних груп"
+
+#: LcSuggestPlugin.php:79
+msgid "LC Suggest"
+msgstr "Пропозиції Бібліотеки Конгресу США"
+
+#: controllers/IndexController.php:41
+msgid "Successfully disabled the element's suggest feature."
+msgstr "Функція пропозиції елемента відключена."
+
+#: controllers/IndexController.php:47 controllers/IndexController.php:59
+msgid "Invalid suggest endpoint. No changes have been made."
+msgstr "Кінцева точка пропозиції недійсна. Жодних змін не внесено."
+
+#: controllers/IndexController.php:52
+msgid "Successfully edited the element's suggest feature."
+msgstr "Функція пропозиції елементу вдало відредагована."
+
+#: controllers/IndexController.php:66
+msgid "Successfully enabled the element's suggest feature."
+msgstr "Елемент пропозиції увімкнено."
+
+#: controllers/IndexController.php:165
+msgid "Vocabularies"
+msgstr "Словники"
+
+#: controllers/IndexController.php:165
+msgid "Authorities"
+msgstr "Авторитетні файли"
+
+#: views/admin/index/index.php:22 views/admin/index/index.php:58
+msgid "Element"
+msgstr "Елемент"
+
+#: views/admin/index/index.php:25
+msgid ""
+"Select an element to assign it a Library of Congress authority/vocabulary. "
+"Elements already assigned an authority/vocabulary are marked with an "
+"asterisk (*)."
+msgstr "Виберіть елемент, щоб визначити авторитетний файл/словник Бібліотеки Конгресу США. Елементи, яким вже призначено авторитетний файл/словник, позначені зірочкою (*)."
+
+#: views/admin/index/index.php:33 views/admin/index/index.php:59
+msgid "Authority/Vocabulary"
+msgstr "Авторитетний файл/Словник"
+
+#: views/admin/index/index.php:36
+#, php-format
+msgid ""
+"Enter a Library of Congress authority/vocabulary to enable the autosuggest "
+"feature for the above element. To disable the feature just deselect the "
+"option. For more information about the authorities and vocabularies "
+"available at the Library of Congress see %shttp://id.loc.gov%s"
+msgstr "Для того, щоб увімкнути функцію автоматичного пропонування вищевказаного елемента введіть авторитетний файл/словник Бібліотеки Конгресу США. Щоб вимкнути функцію, просто зніміть позначку. Для отримання додаткової інформації про авторитетні файли та словники, доступні в Бібліотеці Конгресу дивитись %shttp://id.loc.gov%s"
+
+#: views/admin/index/index.php:47
+msgid "Edit Suggest"
+msgstr "Зкорегуйте запропоноване"
+
+#: views/admin/index/index.php:52
+msgid "Current Assignments"
+msgstr "Поточні значення"
+
+#: views/admin/index/index.php:57
+msgid "Element Set"
+msgstr "Набір елементів"
+
+#: views/admin/index/index.php:73
+msgid "There are no suggest assignments."
+msgstr "Відсутні запропоновані значення"

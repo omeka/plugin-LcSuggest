@@ -4,13 +4,14 @@
 # 
 # Translators:
 # Doru  DEACONU <dumitrudeaconu@yahoo.com>, 2014
+# Nicolaie Constantinescu <kosson@gmail.com>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Omeka\n"
 "Report-Msgid-Bugs-To: http://github.com/omeka/plugin-LcSuggest/issues\n"
 "POT-Creation-Date: 2012-12-11 21:49-0500\n"
-"PO-Revision-Date: 2014-11-25 18:29+0000\n"
-"Last-Translator: Doru  DEACONU <dumitrudeaconu@yahoo.com>\n"
+"PO-Revision-Date: 2017-09-19 16:11+0000\n"
+"Last-Translator: Nicolaie Constantinescu <kosson@gmail.com>\n"
 "Language-Team: Romanian (http://www.transifex.com/omeka/omeka/language/ro/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -32,15 +33,15 @@ msgstr "Toate vocabularele"
 
 #: Suggest endpoint name
 msgid "Library of Congress Subject Headings"
-msgstr ""
+msgstr "Vedete de subiect ale Library of Congress"
 
 #: Suggest endpoint name
 msgid "Library of Congress Names"
-msgstr ""
+msgstr "Nume Library of Congres"
 
 #: Suggest endpoint name
 msgid "Library of Congress Children's Subject Headings"
-msgstr ""
+msgstr "Vedete de subiect ale Library of Congress pentru copii"
 
 #: Suggest endpoint name
 msgid "Library of Congress Genre Form Headings"

@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the Omeka package.
 # 
 # Translators:
-# Hong Zhang <zhangh@unlv.nevada.edu>, 2013
+# Hong Zhang <zhangh@unlv.nevada.edu>, 2013,2018
 msgid ""
 msgstr ""
 "Project-Id-Version: Omeka\n"
 "Report-Msgid-Bugs-To: http://github.com/omeka/plugin-LcSuggest/issues\n"
 "POT-Creation-Date: 2012-12-11 21:49-0500\n"
-"PO-Revision-Date: 2013-04-05 22:45+0000\n"
+"PO-Revision-Date: 2018-03-02 05:43+0000\n"
 "Last-Translator: Hong Zhang <zhangh@unlv.nevada.edu>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/omeka/omeka/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
@@ -20,39 +20,39 @@ msgstr ""
 
 #: Suggest endpoint name
 msgid "All Authorities and Vocabularies"
-msgstr ""
+msgstr "所有权威和词汇"
 
 #: Suggest endpoint name
 msgid "All Authorities"
-msgstr ""
+msgstr "所有权威"
 
 #: Suggest endpoint name
 msgid "All Vocabularies"
-msgstr "所有词汇表"
+msgstr "所有词汇"
 
 #: Suggest endpoint name
 msgid "Library of Congress Subject Headings"
-msgstr ""
+msgstr "美国国会图书馆主题标题"
 
 #: Suggest endpoint name
 msgid "Library of Congress Names"
-msgstr ""
+msgstr "美国国会图书馆名称"
 
 #: Suggest endpoint name
 msgid "Library of Congress Children's Subject Headings"
-msgstr ""
+msgstr "美国国会图书馆儿童主题标题"
 
 #: Suggest endpoint name
 msgid "Library of Congress Genre Form Headings"
-msgstr ""
+msgstr "美国国会图书馆类型格式标题"
 
 #: Suggest endpoint name
 msgid "Thesaurus for Graphic Materials"
-msgstr ""
+msgstr "图形材料辞典"
 
 #: Suggest endpoint name
 msgid "MARC Code List for Relators"
-msgstr ""
+msgstr "叙述者的MARC代码列表"
 
 #: Suggest endpoint name
 msgid "MARC List for Countries"
@@ -60,35 +60,35 @@ msgstr "MARC国家列表"
 
 #: Suggest endpoint name
 msgid "MARC List for Geographic Areas"
-msgstr ""
+msgstr "地理区域的MARC列表"
 
 #: Suggest endpoint name
 msgid "MARC List for Languages"
-msgstr ""
+msgstr "语言的MARC列表"
 
 #: Suggest endpoint name
 msgid "ISO 639-5 Language Families and Groups"
-msgstr ""
+msgstr "ISO 639-5 语系和群组"
 
 #: LcSuggestPlugin.php:79
 msgid "LC Suggest"
-msgstr ""
+msgstr "LC建议"
 
 #: controllers/IndexController.php:41
 msgid "Successfully disabled the element's suggest feature."
-msgstr ""
+msgstr "成功禁用了元素的建议作用。"
 
 #: controllers/IndexController.php:47 controllers/IndexController.php:59
 msgid "Invalid suggest endpoint. No changes have been made."
-msgstr ""
+msgstr "无效建议端点。未作任何更新。"
 
 #: controllers/IndexController.php:52
 msgid "Successfully edited the element's suggest feature."
-msgstr ""
+msgstr "成功编辑了元素的建议作用。"
 
 #: controllers/IndexController.php:66
 msgid "Successfully enabled the element's suggest feature."
-msgstr ""
+msgstr "成功启用了元素的建议作用。"
 
 #: controllers/IndexController.php:165
 msgid "Vocabularies"
@@ -96,7 +96,7 @@ msgstr "词汇集"
 
 #: controllers/IndexController.php:165
 msgid "Authorities"
-msgstr ""
+msgstr "权威"
 
 #: views/admin/index/index.php:22 views/admin/index/index.php:58
 msgid "Element"
@@ -107,11 +107,11 @@ msgid ""
 "Select an element to assign it a Library of Congress authority/vocabulary. "
 "Elements already assigned an authority/vocabulary are marked with an "
 "asterisk (*)."
-msgstr ""
+msgstr "选择一个元素，给予其美国国会权威/词汇。已经给予权威/词汇的元素以星号（*）标记。"
 
 #: views/admin/index/index.php:33 views/admin/index/index.php:59
 msgid "Authority/Vocabulary"
-msgstr ""
+msgstr "权威/词汇"
 
 #: views/admin/index/index.php:36
 #, php-format
@@ -120,15 +120,15 @@ msgid ""
 "feature for the above element. To disable the feature just deselect the "
 "option. For more information about the authorities and vocabularies "
 "available at the Library of Congress see %shttp://id.loc.gov%s"
-msgstr ""
+msgstr "输入美国国会图书馆权威/词汇以便对上述元素启用自动建议功能。要停用该功能只需取消该选项。需要更多有关美国国会的可用权威和词汇，参见%shttp://id.loc.gov%s"
 
 #: views/admin/index/index.php:47
 msgid "Edit Suggest"
-msgstr ""
+msgstr "编辑建议"
 
 #: views/admin/index/index.php:52
 msgid "Current Assignments"
-msgstr ""
+msgstr "当前任务"
 
 #: views/admin/index/index.php:57
 msgid "Element Set"
@@ -136,4 +136,4 @@ msgstr "元素集"
 
 #: views/admin/index/index.php:73
 msgid "There are no suggest assignments."
-msgstr ""
+msgstr "没有建议任务。"
