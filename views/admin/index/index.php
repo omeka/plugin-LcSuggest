@@ -44,13 +44,14 @@ jQuery(document).ready(function() {
 </section>
 <section class="three columns omega">
     <div id="edit" class="panel">
-        <?php echo $this->formSubmit('edit-element-suggest', __('Edit Suggest'), array('class' => 'submit big green button')); ?>
+        <?php echo $this->formSubmit('edit-element-suggest', __('Save Changes'), array('class' => 'submit big green button')); ?>
     </div>
 </section>
 </form>
-<section class="ten columns alpha">
+<section class="seven columns alpha">
     <h2><?php echo __('Current Assignments'); ?></h2>
     <?php if ($this->assignments): ?>
+    <div class="table-responsive">
     <table>
         <thead>
         <tr>
@@ -69,6 +70,7 @@ jQuery(document).ready(function() {
         <?php endforeach; ?>
         </tbody>
     </table>
+    </div>
     <?php else: ?>
     <p><?php echo __('There are no suggest assignments.'); ?></p>
     <?php endif; ?>
