@@ -3,13 +3,15 @@
 # This file is distributed under the same license as the Omeka package.
 # 
 # Translators:
+# Daniele Binaghi, 2021
 # Guybrush88 <erpizzo@alice.it>, 2015
+# Joe Mauri <asbruff@gmail.com>, 2021
 msgid ""
 msgstr ""
-"Project-Id-Version: Omeka\n"
+"Project-Id-Version: Omeka Classic\n"
 "Report-Msgid-Bugs-To: http://github.com/omeka/plugin-LcSuggest/issues\n"
 "POT-Creation-Date: 2012-12-11 21:49-0500\n"
-"PO-Revision-Date: 2019-10-16 04:54+0000\n"
+"PO-Revision-Date: 2021-06-25 10:00+0000\n"
 "Last-Translator: Daniele Binaghi\n"
 "Language-Team: Italian (http://www.transifex.com/omeka/omeka/language/it/)\n"
 "MIME-Version: 1.0\n"
@@ -32,63 +34,63 @@ msgstr "Tutti i vocabolari"
 
 #: Suggest endpoint name
 msgid "Library of Congress Subject Headings"
-msgstr ""
+msgstr "Libreria del Congresso, Titoli Soggetti"
 
 #: Suggest endpoint name
 msgid "Library of Congress Names"
-msgstr ""
+msgstr "Libreria del Congresso, Nomi"
 
 #: Suggest endpoint name
 msgid "Library of Congress Children's Subject Headings"
-msgstr ""
+msgstr "Libreria del Congresso, Titoli Soggetti per Bambini"
 
 #: Suggest endpoint name
 msgid "Library of Congress Genre Form Headings"
-msgstr ""
+msgstr "Libreria del Congresso, Titoli Genere e Forma"
 
 #: Suggest endpoint name
 msgid "Thesaurus for Graphic Materials"
-msgstr ""
+msgstr "Thesaurus dei Materiali Grafici"
 
 #: Suggest endpoint name
 msgid "MARC Code List for Relators"
-msgstr ""
+msgstr "Lista MARC per Codici Relatori"
 
 #: Suggest endpoint name
 msgid "MARC List for Countries"
-msgstr ""
+msgstr "Lista MARC delle Nazioni"
 
 #: Suggest endpoint name
 msgid "MARC List for Geographic Areas"
-msgstr ""
+msgstr "Lista MARC delle Aree Geografiche"
 
 #: Suggest endpoint name
 msgid "MARC List for Languages"
-msgstr ""
+msgstr "Lista MARC delle lingue"
 
 #: Suggest endpoint name
 msgid "ISO 639-5 Language Families and Groups"
-msgstr ""
+msgstr "Famiglie Linguistiche e Gruppi ISO 639-5"
 
 #: LcSuggestPlugin.php:79
 msgid "LC Suggest"
-msgstr ""
+msgstr "LC Suggest"
 
 #: controllers/IndexController.php:41
 msgid "Successfully disabled the element's suggest feature."
-msgstr ""
+msgstr "La funzione di suggerimento è stata disabilitata con successo."
 
 #: controllers/IndexController.php:47 controllers/IndexController.php:59
 msgid "Invalid suggest endpoint. No changes have been made."
-msgstr ""
+msgstr "Endpoint del suggerimento non valido. Nessuna modifica applicata."
 
 #: controllers/IndexController.php:52
 msgid "Successfully edited the element's suggest feature."
-msgstr ""
+msgstr "La funzione di suggerimento è stata modificata con successo."
 
 #: controllers/IndexController.php:66
 msgid "Successfully enabled the element's suggest feature."
-msgstr ""
+msgstr "Funzione di suggerimento attivata con successo."
 
 #: controllers/IndexController.php:165
 msgid "Vocabularies"
@@ -107,7 +109,7 @@ msgid ""
 "Select an element to assign it a Library of Congress authority/vocabulary. "
 "Elements already assigned an authority/vocabulary are marked with an "
 "asterisk (*)."
-msgstr ""
+msgstr "Seleziona un elemento per assegnare un'autorità / vocabolario della Libreria del Congresso. Gli elementi a cui è già stato assegnato un'autorità / vocabolario sono contrassegnati con un asterisco (*)."
 
 #: views/admin/index/index.php:33 views/admin/index/index.php:59
 msgid "Authority/Vocabulary"
@@ -120,20 +122,20 @@ msgid ""
 "feature for the above element. To disable the feature just deselect the "
 "option. For more information about the authorities and vocabularies "
 "available at the Library of Congress see %shttp://id.loc.gov%s"
-msgstr ""
+msgstr "Inserisci una autorità / vocabolario alla Libreria del Congresso per abilitare i suggerimenti automatici dell'elemento sopraindicato. Per disabilitare la funzione deseleziona l'opzione. Per informazioni aggiuntive circa le autorità e i vocabolari disponibili alla Libreria del Congresso visita  %shttp://id.loc.gov%s"
 
 #: views/admin/index/index.php:47
 msgid "Edit Suggest"
-msgstr ""
+msgstr "Modifica Suggerimento"
 
 #: views/admin/index/index.php:52
 msgid "Current Assignments"
-msgstr ""
+msgstr "Assegnazioni Correnti"
 
 #: views/admin/index/index.php:57
 msgid "Element Set"
-msgstr ""
+msgstr "Set di Elementi"
 
 #: views/admin/index/index.php:73
 msgid "There are no suggest assignments."
-msgstr ""
+msgstr "Non ci sono assegnazioni di suggerimenti."

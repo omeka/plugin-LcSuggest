@@ -7,7 +7,7 @@
 # MICHAL D. <black23@gmail.com>, 2013
 msgid ""
 msgstr ""
-"Project-Id-Version: Omeka\n"
+"Project-Id-Version: Omeka Classic\n"
 "Report-Msgid-Bugs-To: http://github.com/omeka/plugin-LcSuggest/issues\n"
 "POT-Creation-Date: 2012-12-11 21:49-0500\n"
 "PO-Revision-Date: 2017-11-15 16:51+0000\n"
